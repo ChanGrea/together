@@ -1,12 +1,17 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import Styled from 'styled-components/native';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+
+const Container = Styled.View`
+    flex: 1;
+`;
 
 type Props = {message: string};
 
 const MapScreen = () => (
-  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text>Map</Text>
-  </View>
+  <Container>
+    <MapView style={{flex: 1}} provider={PROVIDER_GOOGLE} />
+  </Container>
 );
 
 export default MapScreen;
